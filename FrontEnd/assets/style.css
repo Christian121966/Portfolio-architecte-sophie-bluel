@@ -48,15 +48,21 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	width: 100%;
 }
+
+main {
+    max-width: 1440px;
+	margin:auto;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	max-width: 1440px;
 }
 section {
 	margin: 50px 0
@@ -68,7 +74,13 @@ h1{
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
-	color: #B1663C
+	color: #B1663C;
+	cursor: pointer;
+	
+}
+
+.logo {
+	cursor: pointer;
 }
 
 h1 > span {
@@ -82,7 +94,10 @@ h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: #1D6154;
+	text-align: center;
+	font-style: normal;
+	line-height: normal;
 }
 nav ul {
 	display: flex;
@@ -93,10 +108,31 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+	cursor: pointer;
 }
 
 li:hover {
 	color: #B1663C;
+}
+
+/*a {
+	text-decoration: none;
+	color: #000000;
+}*/
+
+a.nav {
+	text-decoration: none;
+    display: flex;
+    width: 55px;
+    height: 19px;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
+a.login {
+	text-decoration: none;
+	color: #000000;
 }
 #introduction {
 	display: flex;
@@ -125,18 +161,85 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+/*buttons-filtres*/
+
+a.filter {
+	text-decoration: none;
+    color: #1D6154;
+}
+
+#filter-buttons button:hover a.filter {
+	color: #FFF;
+}
+
+#filter-buttons {
+    text-align: center;
+    margin: 50px 0;
+}
+
+#filter-buttons button {
+    margin: 5px;
+    padding: 5px 10px;
+	border-radius: 60px;
+	border: 1px solid #1D6154;
+    cursor: pointer;
+}
+
+#filter-buttons button:hover {
+	background-color: #1D6154;
+}
+
+button.tous {
+	width: 100px;
+	height: 37px;
+}
+
+button.objects {
+	width: 100px;
+	height: 37px;
+}
+
+button.apartements {
+	width: 157px;
+	height: 37px;
+}
+
+button.hotels-restaurants {
+	width: 198px;
+	height: 37px;
+}
+
+
+/* Styles pour la galerie d'images */
 .gallery {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-column-gap: 20px;
-	grid-row-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
 }
 
-.gallery img {
-	width: 100%;
-
+.gallery figure {
+    width: calc(33.33% - 10px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: width 0.3s, opacity 0.3s;
 }
+
+.gallery figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Styles pour les filtres actifs et inactifs */
+figure.inactive {
+	display: none;
+}
+
+
+
 #contact {
 	width: 50%;
 margin: auto;
@@ -180,9 +283,89 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+
+/*footer*/
+
+/*footer {
+	position: absolute;
+	top: 964px;
+}*/
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em;
 }
 
+section#login-section {
+	width: 26%;
+    margin: auto;
+}
+
+h2.login-title {
+	margin-bottom: 20px;
+}
+
+form#login-form {
+	text-align: left;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+label.email-label {
+	margin: 2em 0 1em 0;
+}
+
+input#username {
+	height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+label.password-label {
+	margin: 2em 0 1em 0;
+}
+
+input#password {
+	height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+button.button-connect {
+	height: 50px;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	flex-shrink: 0;
+	cursor: pointer;
+	font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #1D6154;
+    margin: 2em auto;
+    width: 180px;
+    text-align: center;
+    border-radius: 60px;
+}
+
+p#message-error.error-message {
+	color: red;
+    margin-top: 10px;
+}
+
+a.mdp-forget {
+	color: #3D3D3D;
+    font-family: Work Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+    margin-top: 28px;
+	display: flex;
+	justify-content: center;
+}
