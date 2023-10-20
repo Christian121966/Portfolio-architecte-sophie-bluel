@@ -22,6 +22,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -148,7 +149,21 @@ a.login {
 }
 
 #introduction article {
-	flex: 1
+	flex: 1;
+	position: relative;
+    top: 46px;
+}
+
+.spitch {
+	font-family: 'Syne';
+    font-weight: 700;
+    font-size: 30px;
+    color: #1D6154;
+    text-align: center;
+    font-style: normal;
+    line-height: normal;
+    position: relative;
+    left: -210px;
 }
 #introduction h2 {
 	margin-bottom: 1em;
@@ -157,10 +172,50 @@ a.login {
 #introduction p {
 	margin-bottom: 0.5em;
 }
-#portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
+
+.projets {
+	position: relative;
+    top: 39px;
+    font-family: 'Syne';
+    font-weight: 700;
+    font-size: 30px;
+    color: #1D6154;
+    text-align: center;
+    font-style: normal;
+    line-height: normal;
 }
+
+/*icone modifier*/
+.modal1 {
+	text-align: center;
+}
+
+.mes_projets {
+	display: inline;
+}
+
+.fa-regular.fa-pen-to-square {
+	margin-left: 15px;
+	cursor: pointer;
+}
+
+.modifier {
+	position: relative;
+	left: 150px;
+	top: -20px;
+	height: 15.58px;
+	color: #000;
+	text-align: center;
+	font-family: Work Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	cursor: pointer;
+}
+
+
+
 
 /*buttons-filtres*/
 
@@ -189,6 +244,100 @@ a.filter {
 #filter-buttons button:hover {
 	background-color: #1D6154;
 }
+
+
+/* Styliser le bouton "Tous" */
+button.all {
+    /* Vos styles pour le bouton "Tous" */
+    width: 100px;
+    height: 37px;
+}
+
+/* Styliser le bouton "Objets" */
+button.objects {
+    /* Vos styles pour le bouton "Objets" */
+    width: 100px;
+    height: 37px;
+}
+
+/* Styliser le bouton "Appartements" */
+button.apartments {
+    /* Vos styles pour le bouton "Appartements" */
+    width: 157px;
+    height: 37px;
+}
+
+/* Styliser le bouton "Hotels & Restaurants" */
+button.hotels-restaurants {
+    /* Vos styles pour le bouton "Hotels & Restaurants" */
+    width: 198px;
+    height: 37px;
+}
+
+/*style des boutons js*/
+
+.objects {
+    /* Styles communs pour tous les boutons avec la classe "objects" */
+    color: #1D6154;
+    cursor: pointer;
+}
+
+.objects[data-filter="Tous"] {
+    /* Styles spécifiques pour le bouton avec l'attribut data-filter="Tous" */
+    width: 100px;
+    height: 37px;
+}
+
+.objects[data-filter="Tous"]:hover {
+	color: #FFF;
+	background-color: #1D6154;
+}
+
+.objects[data-filter="Objets"] {
+    /* Styles spécifiques pour le bouton avec l'attribut data-filter="Objets" */
+    width: 100px;
+    height: 37px;
+}
+
+.objects[data-filter="Objets"]:hover {
+	color: #FFF;
+	background-color: #1D6154;
+}
+
+.objects[data-filter="Appartements"] {
+    /* Styles spécifiques pour le bouton avec l'attribut data-filter="Appartements" */
+    width: 157px;
+    height: 37px;
+}
+
+.objects[data-filter="Appartements"]:hover {
+	color: #FFF;
+	background-color: #1D6154;
+}
+
+.objects[data-filter="Hotels & restaurants"] {
+    /* Styles spécifiques pour le bouton avec l'attribut data-filter="Hotels & restaurants" */
+    width: 198px;
+    height: 37px;
+}
+
+.objects[data-filter="Hotels & restaurants"]:hover {
+	color: #FFF;
+	background-color: #1D6154;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 button.tous {
 	width: 100px;
@@ -352,6 +501,33 @@ button.button-connect {
     border-radius: 60px;
 }
 
+.animationbtn {
+	animation: animationbtn 0.3s ease-in-out;
+  }
+  
+  @keyframes animationbtn {
+	0% {
+	  background-color: #d65353;
+	  transform: translateX(0);
+	}
+	20% {
+	  transform: translateX(-10px);
+	}
+	40% {
+	  transform: translateX(10px);
+	}
+	60% {
+	  transform: translateX(-10px);
+	}
+	80% {
+	  transform: translateX(10px);
+	}
+	100% {
+	  transform: translateX(0);
+	}
+  }
+  
+
 p#message-error.error-message {
 	color: red;
     margin-top: 10px;
@@ -368,4 +544,115 @@ a.mdp-forget {
     margin-top: 28px;
 	display: flex;
 	justify-content: center;
+}
+
+
+/*mode édition*/
+/*.hidden {
+    display: none;
+}
+
+
+.edition-mode {
+    max-width: 1440px;
+    height: 59px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}*/
+
+/*modal-gallery*/
+
+.modal-container {
+    position: relative;
+    background: white;
+    max-width: 460px;
+    height: 610px;
+    margin: auto;
+    flex: 1;
+    padding: 50px;
+}
+
+/* Styles de base pour le modal */
+.modal {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    visibility: hidden;
+    margin: auto;
+    transition: visibility 0.3s;
+}
+
+/* Styles pour le modal visible */
+.modal-visible {
+    visibility: visible;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    font-family: "FontAwesome";
+}
+
+.modal-title {
+    display: flex;
+    justify-content: center;
+    font-size: 26px;
+    padding-bottom: 35px;
+    font-weight: 400;
+}
+
+.modal-photo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid #B3B3B3;
+    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.modal-photo img {
+    width: 79px;
+    height: 105px;
+    cursor: pointer;
+}
+
+i.fa-regular.fa-trash-can {
+    position: absolute;
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-family: "FontAwesome";
+    font-size: 11px;
+    transform: translate(-13px, 3px);
+}
+
+.modal-ajout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btnajout {
+    font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #1D6154;
+    margin: 2em auto;
+    text-align: center;
+    border-radius: 60px;
+    width: 237px;
+    height: 36px;
+    font-size: 14px;
+    cursor: pointer;
 }
