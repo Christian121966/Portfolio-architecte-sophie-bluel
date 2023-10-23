@@ -162,8 +162,9 @@ a.login {
     text-align: center;
     font-style: normal;
     line-height: normal;
-    position: relative;
-    left: -210px;
+    position: absolute;
+    left: 0px;
+    top: -80px;
 }
 #introduction h2 {
 	margin-bottom: 1em;
@@ -194,7 +195,7 @@ a.login {
 	display: inline;
 }
 
-.fa-regular.fa-pen-to-square {
+.fas.fa-pen-square {
 	margin-left: 15px;
 	cursor: pointer;
 }
@@ -325,17 +326,6 @@ button.hotels-restaurants {
 	color: #FFF;
 	background-color: #1D6154;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -546,24 +536,6 @@ a.mdp-forget {
 	justify-content: center;
 }
 
-
-/*mode édition*/
-/*.hidden {
-    display: none;
-}
-
-
-.edition-mode {
-    max-width: 1440px;
-    height: 59px;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-}*/
-
 /*modal-gallery*/
 
 .modal-container {
@@ -577,18 +549,38 @@ a.mdp-forget {
 }
 
 /* Styles de base pour le modal */
-.modal {
-    background-color: rgba(0, 0, 0, 0.75);
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: flex;
-    visibility: hidden;
-    margin: auto;
-    transition: visibility 0.3s;
-}
+
 
 /* Styles pour le modal visible */
+/* Styles de base pour le modal */
+.modal {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: relative;
+    margin: auto;
+}
+
+.modal.invisible {
+    display: none;
+  }
+    /*background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;*/
+    /*inset: 0;*/
+    /*z-index: 1000;
+    display: flex;*/
+    /*visibility: hidden;*/
+    /*margin: auto;
+    transition: visibility 0.3s;
+}*/
+
+/* Styles pour le modal visible */
+/*.modal-visible {
+    visibility: visible;
+    display: block;
+}*/
+
+
+
+
 .modal-visible {
     visibility: visible;
 }
