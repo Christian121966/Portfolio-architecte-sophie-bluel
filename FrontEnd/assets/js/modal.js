@@ -43,11 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    if (modal.classList.contains('invisible')) {
+    var modalPhotoContainer = modal.querySelector('.modal-photo');
+
+    if (modalPhotoContainer) {
+      modalPhotoContainer.innerHTML = '';
+    } 
       modal.classList.remove('invisible');
-    } else {
-      modal.classList.add('invisible');
-    }
+  
     
     console.log('openModal called.');
     

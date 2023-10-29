@@ -74,3 +74,28 @@ document.addEventListener('DOMContentLoaded', function() {
   modifier.addEventListener('click', openModal);
   modalCloseButton.addEventListener('click', closeModal);
 });
+
+
+
+
+
+
+
+
+
+
+function openModal(event) {
+  if (!modal) {
+    console.error('modal is not defined.');
+    return;
+  }
+
+  var modalPhotoContainer = modal.querySelector('.modal-photo');
+
+  if (modal.classList.contains('invisible')) {
+    modal.classList.remove('invisible');
+  } else {
+    modal.classList.add('invisible');
+  }
+  
+  console.log('openModal called.');}
