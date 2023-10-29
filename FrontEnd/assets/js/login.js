@@ -26,7 +26,7 @@ window.onload = function() {
         fetch("http://localhost:5678/api/users/login", requestOptions)
             .then(response => {
                 if (response.status === 404 || response.status === 401) {
-                    errorMessage.textContent = "Invalid username or password";
+                    errorMessage.textContent = "email ou mot de passe invalide";
                     buttonConnect.classList.add("animationbtn");
                 } else {
                     return response.json();
@@ -36,16 +36,11 @@ window.onload = function() {
 
                 localStorage.setItem('token', result.token);
                 window.location.href = "./index.html";
-                //ok
-                //sauvgarder le token ==== result.token
-                //local storage ==>
-                //changer la page
-                // redirection en js
                 console.log(result)
             })
         .catch(error => console.log('error', error));
 
     });
 
-   
+    
 }

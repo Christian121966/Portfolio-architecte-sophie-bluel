@@ -65,3 +65,19 @@ if (activeCategory === "Tous" || work.category.name === activeCategory) {
 }
 });
 }
+
+
+
+/*window.onload = function() {
+    const loginLogoutLink = document.getElementById('login-logout-link');
+
+    if (loginLogoutLink) {
+        if (isUserLoggedIn()) {
+            loginLogoutLink.textContent = 'Logout';
+            loginLogoutLink.href = 'login.html'; // Lien de déconnexion
+        } else {
+            loginLogoutLink.textContent = 'Login';
+            loginLogoutLink.href = 'login.html'; // Lien de connexion
+        }
+    }
+}*/

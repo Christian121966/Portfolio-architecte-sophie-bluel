@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM content loaded.');
   const openModalIcon = document.querySelector('#openModalIcon');
-  const modifierText = document.querySelector('.modifier'); // Utilisez ".modifier" au lieu de ".modal1"
+  const mesProjets = document.querySelector('.mes_projets');
+  const modifier = document.querySelector('.modal1');
 
   const modal = document.createElement('div');
   modal.id = 'modal-gallery';
@@ -34,33 +34,23 @@ document.addEventListener('DOMContentLoaded', function() {
   modalContent.appendChild(modalAddPhotoButton);
 
   modal.appendChild(modalContent);
-
   document.body.appendChild(modal);
 
   function openModal(event) {
-    if (!modal) {
-      console.error('modal is not defined.');
-      return;
-    }
+    modal.classList.remove('invisible');
 
-    if (modal.classList.contains('invisible')) {
+    // Le reste de votre code pour charger les photos depuis le backend et les afficher
+
+    function openModal(event) {
       modal.classList.remove('invisible');
-    } else {
-      modal.classList.add('invisible');
-    }
-    
-    console.log('openModal called.');
-    
-
-    // Récupérez vos photos depuis le backend et ajoutez-les au modal ici
-    fetch("http://localhost:5678/api/works")
+  
+      fetch("http://localhost:5678/api/works")
         .then(function(response) {
           return response.json();
         })
         .then(function(data) {
           console.log("Nombre de photos récupérées :", data.length);
           var modalPhotoContainer = modal.querySelector('.modal-photo');
-          console.log('modalPhotoContainer:', modalPhotoContainer);
           data.forEach(function(photo) {
             var photoElement = document.createElement('img');
             photoElement.src = photo.imageUrl;
@@ -70,13 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(function(error) {
           console.log('Une erreur s\'est produite lors de la récupération des photos depuis le backend :', error);
         });
-  };
+    }
+  }
 
   function closeModal() {
     modal.classList.add('invisible');
+    openModalIcon.classList.remove('hidden');
+    mesProjets.classList.remove('hidden');
+    modifier.classList.remove('hidden');
   }
 
   openModalIcon.addEventListener('click', openModal);
-  modifierText.addEventListener('click', openModal);
+  modifier.addEventListener('click', openModal);
   modalCloseButton.addEventListener('click', closeModal);
 });
