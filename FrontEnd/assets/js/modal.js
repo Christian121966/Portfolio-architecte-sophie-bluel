@@ -40,45 +40,59 @@ document.addEventListener('DOMContentLoaded', function() {
   function openModal(event) {
     if (!modal) {
       console.error('modal is not defined.');
-      return;
+      return
     }
 
     var modalPhotoContainer = modal.querySelector('.modal-photo');
 
     if (modalPhotoContainer) {
       modalPhotoContainer.innerHTML = '';
-    } 
-      modal.classList.remove('invisible');
-  
-    
-    console.log('openModal called.');
-    
+    }
+    modal.classList.remove('invisible');
 
-    // Récupérez vos photos depuis le backend et ajoutez-les au modal ici
     fetch("http://localhost:5678/api/works")
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(data) {
-          console.log("Nombre de photos récupérées :", data.length);
-          var modalPhotoContainer = modal.querySelector('.modal-photo');
-          console.log('modalPhotoContainer:', modalPhotoContainer);
-          data.forEach(function(photo) {
-            var photoElement = document.createElement('img');
-            photoElement.src = photo.imageUrl;
-            modalPhotoContainer.appendChild(photoElement);
-          });
-        })
-        .catch(function(error) {
-          console.log('Une erreur s\'est produite lors de la récupération des photos depuis le backend :', error);
-        });
-  };
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        console.log("Nombre de photos récupérées :", data.length);
+        var modalPhotoContainer =  modal.querySelector('.modal-photo');
+        console.log('modalPhotoContainer:', modalPhotoContainer);
+        data.forEach(function(photo) {
+          var photoElement = document.createElement('div');
+          photoElement.className = 'modal-photo-item';
 
+          var trashIcon = document.createElement('i');
+          trashIcon.className = 'fa-regular fa-trash-can';
+          trashIcon.addEventListener('click', function() {
+            photoElement.remove();
+          });
+
+          var imgElement = document.createElement('img');
+          imgElement.src = photo.imageUrl;
+
+          photoElement.appendChild(trashIcon);
+          photoElement.appendChild(imgElement);
+
+          modalPhotoContainer.appendChild(photoElement);
+        });
+      })
+      .catch(function(error) {
+        console.log('Une erreur s\'est produite lors de la récupération de photos depuis le backend :', error);
+      });
+  }
   function closeModal() {
     modal.classList.add('invisible');
   }
+
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
 
   openModalIcon.addEventListener('click', openModal);
   modifierText.addEventListener('click', openModal);
   modalCloseButton.addEventListener('click', closeModal);
 });
+

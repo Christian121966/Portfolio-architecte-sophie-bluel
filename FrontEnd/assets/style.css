@@ -428,14 +428,6 @@ input[type="submit"]{
     position: relative;
 }
 
-
-/*footer*/
-
-/*footer {
-	position: absolute;
-	top: 964px;
-}*/
-
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
@@ -577,6 +569,7 @@ a.mdp-forget {
     position: fixed;
     left: 630px;
     top: 28px;
+    cursor: pointer;
 }
 
 
@@ -584,7 +577,6 @@ a.mdp-forget {
 .modal-photo {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
     border-bottom: 1px solid #B3B3B3;
     padding: 46px 35px;
 }
@@ -613,7 +605,10 @@ i.fa-regular.fa-trash-can {
     cursor: pointer;
     font-family: "FontAwesome";
     font-size: 11px;
-    transform: translate(-13px, 3px);
+    transform: translate(-8px, 8px);
+    top: 6px;
+    right: 5px;
+    z-index: 1;
 }
 
 .modal-ajout {
@@ -642,3 +637,14 @@ i.fa-regular.fa-trash-can {
     position: relative;
     left: 10px;
 }
+
+/*Icone fa-trash-can*/
+
+.modal-photo-item {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+  }
+  
+  
+  

@@ -82,8 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
 function openModal(event) {
   if (!modal) {
     console.error('modal is not defined.');
@@ -92,10 +90,31 @@ function openModal(event) {
 
   var modalPhotoContainer = modal.querySelector('.modal-photo');
 
-  if (modal.classList.contains('invisible')) {
+  if (modalPhotoContainer) {
+    modalPhotoContainer.innerHTML = '';
+  } 
     modal.classList.remove('invisible');
-  } else {
-    modal.classList.add('invisible');
-  }
+
   
-  console.log('openModal called.');}
+  console.log('openModal called.');
+  
+
+  // Récupérez vos photos depuis le backend et ajoutez-les au modal ici
+  fetch("http://localhost:5678/api/works")
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        console.log("Nombre de photos récupérées :", data.length);
+        var modalPhotoContainer = modal.querySelector('.modal-photo');
+        console.log('modalPhotoContainer:', modalPhotoContainer);
+        data.forEach(function(photo) {
+          var photoElement = document.createElement('img');
+          photoElement.src = photo.imageUrl;
+          modalPhotoContainer.appendChild(photoElement);
+        });
+      })
+      .catch(function(error) {
+        console.log('Une erreur s\'est produite lors de la récupération des photos depuis le backend :', error);
+      });
+}
