@@ -4,6 +4,8 @@ const gallery = document.getElementById("gallery");
 let datas = [];
 
 // Chargez les données initiales ici
+function updateData() {
+
 fetch("http://localhost:5678/api/works")
     .then(response => response.json())
     .then(function (data) {
@@ -19,9 +21,9 @@ fetch("http://localhost:5678/api/works")
         });
         updateGallery('Tous'); // Mettez à jour la galerie avec 'Tous' par défaut
     });
+}
 
-
-
+updateData();
 
 
 // Associez un gestionnaire d'événements à chaque bouton de filtre
@@ -45,6 +47,7 @@ function createFilter(categorie) {
       updateGallery(filterValue); // Mettez à jour la galerie avec la catégorie du bouton cliqué
     });
 }
+
 function updateGallery(activeCategory) {
 gallery.innerHTML = "";
 
@@ -65,19 +68,3 @@ if (activeCategory === "Tous" || work.category.name === activeCategory) {
 }
 });
 }
-
-
-
-/*window.onload = function() {
-    const loginLogoutLink = document.getElementById('login-logout-link');
-
-    if (loginLogoutLink) {
-        if (isUserLoggedIn()) {
-            loginLogoutLink.textContent = 'Logout';
-            loginLogoutLink.href = 'login.html'; // Lien de déconnexion
-        } else {
-            loginLogoutLink.textContent = 'Login';
-            loginLogoutLink.href = 'login.html'; // Lien de connexion
-        }
-    }
-}*/

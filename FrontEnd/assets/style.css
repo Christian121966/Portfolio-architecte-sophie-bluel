@@ -201,19 +201,21 @@ a.login {
 }
 
 .modifier {
-	position: relative;
-	left: 150px;
-	top: -20px;
-	height: 15.58px;
-	color: #000;
-	text-align: center;
-	font-family: Work Sans;
-	font-size: 14px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: normal;
-	cursor: pointer;
+	display: block;
+    position: relative;
+    left: 180px;
+    top: -36px;
+    height: 15.58px;
+    color: #000;
+    text-align: center;
+    font-family: Work Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
 }
+
 
 
 
@@ -634,8 +636,11 @@ i.fa-regular.fa-trash-can {
 }
 
 #openModalIcon.far.fa-pen-to-square {
+    display: block;
     position: relative;
-    left: 10px;
+    left: 130px;
+    top: -22px;
+    cursor: pointer;
 }
 
 /*Icone fa-trash-can*/
@@ -644,6 +649,17 @@ i.fa-regular.fa-trash-can {
     position: relative;
     display: inline-block;
     margin: 5px;
+  }
+
+  .edition-mode.hidden {
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #FFF;
+    cursor: pointer;
+    gap: 10px;
   }
   
   

@@ -5,7 +5,10 @@ window.onload = function() {
     buttonConnect.addEventListener('click', async (e) => {
         console.log("Début de l'écouteur de clic");
         e.preventDefault();
-        console.log('click'); // Utilisation de console au lieu de logger
+        console.log('click');
+
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.href = './index.html';
 
 
         var myHeaders = new Headers();
