@@ -135,6 +135,10 @@ a.login {
 	text-decoration: none;
 	color: #000000;
 }
+
+a {
+    color: #000;
+}
 #introduction {
 	display: flex;
 	align-items: center;
@@ -383,7 +387,7 @@ figure.inactive {
 
 #contact {
 	width: 50%;
-margin: auto;
+    margin: auto;
 }
 #contact > * {
 	text-align: center;
@@ -537,29 +541,38 @@ a.mdp-forget {
 }
 
 
+
+
+
 /* Style pour le modal */
 .modal-container {
     position: fixed; /* Utilisez "fixed" pour un positionnement correct */
     background: white;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -45%);
     padding: 20px;
-    height: 688px;
-    width: 630px;
+    max-height: 80vh;
+    width: 632px;
     overflow-y: auto; /* Ajoutez un défilement si nécessaire */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .modal {
     background-color: rgba(0, 0, 0, 0.5);
-    position: fixed; /* Utilisez "fixed" pour l'arrière-plan obscurci */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    height: 100%
+}
+
+.style-hr.trait {
+    width: 420px;
+    height: 1px;
+    position: fixed;
+    left: 105px;
+    top: 577px;
 }
 
 .invisible {
@@ -579,7 +592,6 @@ a.mdp-forget {
 .modal-photo {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid #B3B3B3;
     padding: 46px 35px;
 }
 
@@ -613,7 +625,7 @@ i.fa-regular.fa-trash-can {
     z-index: 1;
 }
 
-.modal-ajout {
+.modalFirst-ajout {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -661,6 +673,189 @@ i.fa-regular.fa-trash-can {
     cursor: pointer;
     gap: 10px;
   }
+
+
+  /*modalAddPhoto*/
+
+
+  #modalAddPhoto {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    }
+
+  .modalAddPhotoContainer {
+    position: absolute;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    height: 688px;
+    max-height: 80vh;
+    width: 630px;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .arrow-left {
+        width: 21px;
+        height: 21px;
+        position: fixed;
+        left: 30px;
+        top: 26px;
+        cursor: pointer;
+    }
+
+    .modalAddPhotoClose {
+        position: fixed;
+        width: 24px;
+        height: 24px;
+        left: 580px;
+        top: 26px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .modalAddPhotoAjouterPhotoContainer {
+        width: 420px;
+        height: 169px;
+        border-radius: 3px;
+        background: #E8F1F6;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 126px;
+        left: 105px;
+    }
+
+    .ajout_photo {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 60px;
+        color: #000;
+        text-align: center;
+        font-family: Work Sans;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }*/
+
+    .modalAddPhotoAjouterPhoto {
+        width: 76px;
+        height: 76px;
+        color: #b9c5cc;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 13px;
+        cursor: pointer;
+    }
+
+    .ajouter-plus {
+        width: 173px;
+        height: 36px;
+        border-radius: 50px;
+        background: #CBD6DC;
+        position: fixed;
+        top: 250px;
+        cursor: pointer;
+    }
+
+    h4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        left: 260px;
+        top: 260px;
+        color: #306685;
+        text-align: center;
+        font-family: Work Sans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .custom-form {
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 382px;
+        left: 105px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h5 {
+        color: #3D3D3D;
+        font-family: Work Sans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        display: flex;
+        position: relative;
+        top: -30px;
+    }
+
+    h6 {
+        color: #3D3D3D;
+        font-family: Work Sans;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        display: flex;
+        position: relative;
+    }
+
+    input#Titre-photo[type="text"].input-titre-photo {
+        width: 420px;
+        height: 51px;
+        background: #FFF;
+        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+        position: relative;
+        top: -22px;
+    }
+
+    select#categorie-photo.select-categorie {
+        width: 420px;
+        height: 51px;
+        background: #FFF;
+        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+        position: relative;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    button.AddPhoto {
+        width: 237px;
+        height: 36px;
+        border-radius: 60px;
+        background: #A7A7A7;
+        display: block;
+        position: absolute;
+        left: 195px;
+        top: 612px;
+        cursor: pointer;
+    }
+
+    .styled-hr {
+        width: 420px;
+        height: 1px;
+        color: #B3B3B3;
+        position: absolute;
+        top: 570px;
+        left: 110px;
+    }
+
   
   
   
