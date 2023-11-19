@@ -695,7 +695,7 @@ i.fa-regular.fa-trash-can {
     left: 50%;
     transform: translate(-50%, -45%);
     height: 688px;
-    max-height: 80vh;
+    max-height: 90vh;
     width: 630px;
     overflow-y: auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);

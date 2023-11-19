@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const openModalIcon = document.querySelector('#openModalIcon');
   openModalIcon.addEventListener('click', openModal);
-  const modifierText = document.querySelector('.modifier'); // Utilisez ".modifier"
+  const modifierText = document.querySelector('.modifier');
   modifierText.addEventListener('click', openModal);
 
   const modalCloseButton = document.createElement('div');
@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
   modalAddPhotoButton.type = 'submit';
   modalAddPhotoButton.value = 'Ajouter une photo';
   modalAddPhotoButton.className = 'btnajout';
+  modalAddPhotoButton.setAttribute('data-modal-id', 'modalAddPhoto');
+  modalAddPhotoButton.addEventListener('click', openModalAddPhoto);
 
   const hrElement = document.createElement('hr');
   hrElement.className = 'style-hr trait';
@@ -93,6 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
           trashIcon.addEventListener('click', function() {
             deletePhoto(photo.id);
             photoElement.remove();
+            function deletePhoto(photoId) {
+              console.log(`suppression de la photo avec l'identifiant ${photoId}`);
+            }
           });
             
           var imgElement = document.createElement('img');
@@ -189,35 +194,6 @@ updateUIVisibility();
 
 //Modal-add-photo
 
-
-const modalContentAddPhoto = document.createElement('div');
-modalContentAddPhoto.className = 'modalAddPhotoContainer';
-
-
-const modalAddPhotoButton = document.createElement('input');
-modalAddPhotoButton.type = 'submit';
-modalAddPhotoButton.value = 'Ajouter une photo';
-modalAddPhotoButton.className = 'btnajout';
-
-const dynamicId = 'btnAjouterPhoto_' + Date.now();
-modalAddPhotoButton.id = dynamicId;
-
-const modalAddPhotoContainer = document.getElementById('modalAddPhoto');
-modalAddPhotoContainer.appendChild(modalAddPhotoButton);
-
-const btnAjouterPhoto = document.getElementById(dynamicId);
-
-btnAjouterPhoto.addEventListener('click', function() {
-  modalAddPhotoContainer.style.display = 'block';
-
-  const modalGallery = document.getElementById('modal-gallery');
-  if (modalGallery) {
-    modalGallery.style.display = 'none';
-  }
-});
-
-
-
 const modalContentAddPhotoHTML = `
 <div id="modalAddPhoto"> 
 			<div class="modalAddPhotoContainer">
@@ -269,9 +245,21 @@ const modalContentAddPhotoHTML = `
 		</div>
 `
 
-modalAddPhotoButton.addEventListener('click', function() {
-  modalContentAddPhoto.innerHTML = modalContentAddPhotoHTML;
-})
+const modalAddPhotoButton = document.createElement('input');
+  modalAddPhotoButton.type = 'submit';
+  modalAddPhotoButton.value = 'Ajouter une photo';
+  modalAddPhotoButton.className = 'btnajout';
+  modalAddPhotoButton.setAttribute('data-modal-id', 'modalAddPhoto');
+  modalAddPhotoButton.addEventListener('click', openModalAddPhoto);
+
+
+  function openModalAddPhoto() {
+    const modalGallery = document.getElementById('modal-gallery');
+    modalGallery.classList.add('invisible');
+
+    const modalAddPhoto = document.getElementById('modalAddPhoto');
+    modalAddPhoto.style.display = 'block';
+}
 
 
 function fermerModal() {
