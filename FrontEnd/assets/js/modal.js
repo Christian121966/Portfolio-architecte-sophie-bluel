@@ -195,19 +195,20 @@ updateUIVisibility();
 //Modal-add-photo
 
 const modalContentAddPhotoHTML = `
-<div id="modalAddPhoto"> 
-			<div class="modalAddPhotoContainer">
+<div class="modalAddPhotoContainer">
+        <a href="/FrontEnd/index.html#arrow-left">
 				<div class="arrow-left">
 				<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
 					<path d="M0.439478 8.94458C-0.146493 9.53055 -0.146493 10.4822 0.439478 11.0681L7.9399 18.5686C8.52587 19.1545 9.47748 19.1545 10.0635 18.5686C10.6494 17.9826 10.6494 17.031 10.0635 16.445L5.11786 11.5041H19.4999C20.3297 11.5041 21 10.8338 21 10.004C21 9.17428 20.3297 8.50393 19.4999 8.50393H5.12255L10.0588 3.56303C10.6447 2.97706 10.6447 2.02545 10.0588 1.43948C9.47279 0.853507 8.52118 0.853507 7.93521 1.43948L0.43479 8.9399L0.439478 8.94458Z" fill="black"/>
 				</svg>
 				</div>
-				<div class="modalAddPhotoClose">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        </a>
+				<div id="modalAddPhotoClose" class="modalAddPhotoClose">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" onclick="fermerModal()">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 				</svg>
 				</div>
-				<p>Ajout photo</p>
+				<p class="ajout_photo">Ajout photo</p>
 				<div class="modalAddPhotoAjouterPhotoContainer">
 					<div class="modalAddPhotoAjouterPhoto">
 						<svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -220,7 +221,7 @@ const modalContentAddPhotoHTML = `
 					<h4>+ Ajouter photo</h4> 
 					</div>
 				</div>
-				<form action=""> 
+				<form action="" class="custom-form"> 
 					<label class="titre">
 						<h5>Titre</h5>
 						<input type="text" id="Titre-photo" name="Titre" class="input-titre-photo" />
@@ -260,6 +261,29 @@ const modalAddPhotoButton = document.createElement('input');
     const modalAddPhoto = document.getElementById('modalAddPhoto');
     modalAddPhoto.style.display = 'block';
 }
+
+
+//Gestion 'arrow-left'
+
+function retourModalGallery() {
+  const modalGallery = document.getElementById('modal-gallery');
+  if (modalGallery) {
+    modalGallery.classList.remove('invisible');
+    modalGallery.scrollIntoView({ behavior: 'smooth' });
+  }
+  const modalAddPhoto = document.getElementById('modalAddPhoto');
+  if (modalAddPhoto) {
+    modalAddPhoto.style.display = 'none';
+  }
+}
+
+document.querySelector(".arrow-left").addEventListener("click", () => { retourModalGallery() });
+
+const modal = document.createElement('div');
+  modal.id = 'modal-gallery';
+  modal.className = 'modal invisible';
+
+
 
 
 function fermerModal() {
