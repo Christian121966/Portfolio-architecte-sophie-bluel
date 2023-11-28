@@ -728,15 +728,59 @@ i.fa-regular.fa-trash-can {
         display: flex;
         justify-content: center;
         position: relative;
-        top: 126px;
+        top: 77px;
         left: 105px;
+    }
+
+    #imageContainer {
+        left: 228px;
+    display: flex;
+    width: 182px;
+    height: 152px;
+    position: fixed;
+    }
+
+    #fileInput {
+        width: 173px;
+        height: 36px;
+        position: absolute;
+        top: 82px;
+        left: -43px;
+        cursor: pointer;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    .custom-file-upload {
+        width: 173px;
+        height: 36px;
+        border-radius: 50px;
+        background: #CBD6DC;
+        position: fixed;
+        top: 202px;
+        left: 235px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center !important;
+        font-weight: bold;
+        justify-content: center;
+        color: #306685;
+        font-family: Work Sans;
+        z-index: 2;
+    }
+
+    #imageContainer img {
+        width: 150px;
+        height: 152px;
+        position: absolute;
+        left: 15px;
     }
 
     .ajout_photo {
         display: flex;
         justify-content: center;
         position: relative;
-        top: 60px;
+        top: 42px;
         color: #000;
         text-align: center;
         font-family: Work Sans;
@@ -744,7 +788,7 @@ i.fa-regular.fa-trash-can {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-    }*/
+    }
 
     .modalAddPhotoAjouterPhoto {
         width: 76px;
@@ -754,20 +798,18 @@ i.fa-regular.fa-trash-can {
         justify-content: center;
         position: relative;
         top: 13px;
+        left: 55px;
         cursor: pointer;
     }
 
-    .ajouter-plus {
-        width: 173px;
-        height: 36px;
-        border-radius: 50px;
-        background: #CBD6DC;
-        position: fixed;
-        top: 250px;
-        cursor: pointer;
+    input#ajout.title {
+        position: relative;
+        top: -6px;
+        left: 34px;
+        display: none;
     }
 
-    h4 {
+    label.file-label {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -781,16 +823,36 @@ i.fa-regular.fa-trash-can {
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+        cursor: pointer;
+    }
+
+    p.ajout {
+        color: #444;
+        text-align: center;
+        font-family: Work Sans;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        position: relative;
+        top: 134px;
+        left: -27px;
     }
 
     .custom-form {
         display: flex;
         justify-content: center;
-        position: fixed;
-        top: 382px;
-        left: 105px;
+        position: relative;
+        top: 391px;
+        left: -1px;
         flex-direction: column;
         align-items: center;
+    }
+
+    h4 {
+        position: fixed;
+        top: 260px;
+        left: 263px;
     }
 
     h5 {
@@ -842,9 +904,17 @@ i.fa-regular.fa-trash-can {
         background: #A7A7A7;
         display: block;
         position: absolute;
-        left: 195px;
-        top: 612px;
+        left: 418px;
+        top: 620px;
         cursor: pointer;
+        z-index: 2;
+        overflow-y: auto;
+    }
+
+    #uploaded-image {
+        display: block;
+        visibility: visible;
+        border: 1px solid #000;
     }
 
     .styled-hr {
@@ -852,8 +922,8 @@ i.fa-regular.fa-trash-can {
         height: 1px;
         color: #B3B3B3;
         position: absolute;
-        top: 570px;
-        left: 110px;
+        top: 580px;
+        left: 337px;
     }
 
   
