@@ -3,117 +3,196 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	text-decoration: none;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 /** end reset css**/
 body {
-	font-family: 'Work Sans' ;
-	font-size: 14px;
-	width: 100%;
+  font-family: "Work Sans";
+  font-size: 14px;
+  width: 100%;
 }
 
 main {
-    max-width: 1440px;
-	margin:auto;
+  max-width: 1440px;
+  margin: auto;
 }
 
 header {
-	display: flex;
-	justify-content: space-between;
-	margin: 50px 0;
-	max-width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 50px;
+  max-width: 1440px;
 }
 section {
-	margin: 50px 0
+  margin: 50px 0;
 }
 
-h1{
-	display: flex;
-	flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
-	font-weight: 800;
-	color: #B1663C;
-	cursor: pointer;
-	
+h1 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Syne";
+  font-size: 22px;
+  font-weight: 800;
+  color: #b1663c;
+  cursor: pointer;
 }
 
 .logo {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 h1 > span {
-	font-family: 'Work Sans';
-	font-size:10px;
-	letter-spacing: 0.1em;
-;
+  font-family: "Work Sans";
+  font-size: 10px;
+  letter-spacing: 0.1em;
 }
 
-h2{
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154;
-	text-align: center;
-	font-style: normal;
-	line-height: normal;
+h2 {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+  color: #1d6154;
+  text-align: center;
+  font-style: normal;
+  line-height: normal;
 }
 nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
-
+  display: flex;
+  align-items: center;
+  list-style-type: none;
 }
 nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
-	cursor: pointer;
+  padding: 0 10px;
+  font-size: 1.2em;
+  cursor: pointer;
 }
 
 li:hover {
-	color: #B1663C;
+  color: #b1663c;
 }
 
 /*a {
@@ -122,810 +201,784 @@ li:hover {
 }*/
 
 a.nav {
-	text-decoration: none;
-    display: flex;
-    width: 55px;
-    height: 19px;
-    justify-content: center;
-    align-items: center;
-    color: #000000;
+  text-decoration: none;
+  display: flex;
+  width: 55px;
+  height: 19px;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
 }
 
 a.login {
-	text-decoration: none;
-	color: #000000;
+  text-decoration: none;
+  color: #000000;
 }
 
 a {
-    color: #000;
+  color: #000;
 }
 #introduction {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 #introduction figure {
-	flex: 1
+  flex: 1;
 }
 #introduction img {
-	display: block;
-	margin: auto;
-	width: 80%;
+  display: block;
+  margin: auto;
+  width: 80%;
 }
 
 #introduction article {
-	flex: 1;
-	position: relative;
-    top: 46px;
+  flex: 1;
+  position: relative;
+  top: 46px;
 }
 
 .spitch {
-	font-family: 'Syne';
-    font-weight: 700;
-    font-size: 30px;
-    color: #1D6154;
-    text-align: center;
-    font-style: normal;
-    line-height: normal;
-    position: absolute;
-    left: 0px;
-    top: -80px;
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+  color: #1d6154;
+  text-align: center;
+  font-style: normal;
+  line-height: normal;
+  position: absolute;
+  left: 0px;
+  top: -80px;
 }
 #introduction h2 {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #introduction p {
-	margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .projets {
-	position: relative;
-    top: 39px;
-    font-family: 'Syne';
-    font-weight: 700;
-    font-size: 30px;
-    color: #1D6154;
-    text-align: center;
-    font-style: normal;
-    line-height: normal;
+  position: relative;
+  top: 39px;
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+  color: #1d6154;
+  text-align: center;
+  font-style: normal;
+  line-height: normal;
 }
 
 /*icone modifier*/
 .modal1 {
-	text-align: center;
+  text-align: center;
 }
 
 .mes_projets {
-	display: inline;
+  display: inline;
 }
 
 .fas.fa-pen-square {
-	margin-left: 15px;
-	cursor: pointer;
+  margin-left: 15px;
+  cursor: pointer;
 }
 
 .modifier {
-	display: block;
-    position: relative;
-    left: 180px;
-    top: -36px;
-    height: 15.58px;
-    color: #000;
-    text-align: center;
-    font-family: Work Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    cursor: pointer;
+  display: block;
+  position: relative;
+  left: 180px;
+  top: -36px;
+  height: 15.58px;
+  color: #000;
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
 }
-
-
-
-
 
 /*buttons-filtres*/
 
 a.filter {
-	text-decoration: none;
-    color: #1D6154;
+  text-decoration: none;
+  color: #1d6154;
 }
 
 #filter-buttons button:hover a.filter {
-	color: #FFF;
+  color: #fff;
 }
 
 #filter-buttons {
-    text-align: center;
-    margin: 50px 0;
+  text-align: center;
+  margin: 50px 0;
 }
 
 #filter-buttons button {
-    margin: 5px;
-    padding: 5px 10px;
-	border-radius: 60px;
-	border: 1px solid #1D6154;
-    cursor: pointer;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 60px;
+  border: 1px solid #1d6154;
+  cursor: pointer;
 }
 
 #filter-buttons button:hover {
-	background-color: #1D6154;
+  background-color: #1d6154;
 }
-
 
 /* Styliser le bouton "Tous" */
 button.all {
-    /* Vos styles pour le bouton "Tous" */
-    width: 100px;
-    height: 37px;
+  /* Vos styles pour le bouton "Tous" */
+  width: 100px;
+  height: 37px;
 }
 
 /* Styliser le bouton "Objets" */
 button.objects {
-    /* Vos styles pour le bouton "Objets" */
-    width: 100px;
-    height: 37px;
+  /* Vos styles pour le bouton "Objets" */
+  width: 100px;
+  height: 37px;
 }
 
 /* Styliser le bouton "Appartements" */
 button.apartments {
-    /* Vos styles pour le bouton "Appartements" */
-    width: 157px;
-    height: 37px;
+  /* Vos styles pour le bouton "Appartements" */
+  width: 157px;
+  height: 37px;
 }
 
 /* Styliser le bouton "Hotels & Restaurants" */
 button.hotels-restaurants {
-    /* Vos styles pour le bouton "Hotels & Restaurants" */
-    width: 198px;
-    height: 37px;
+  /* Vos styles pour le bouton "Hotels & Restaurants" */
+  width: 198px;
+  height: 37px;
 }
 
 /*style des boutons js*/
 
 .objects {
-    /* Styles communs pour tous les boutons avec la classe "objects" */
-    color: #1D6154;
-    cursor: pointer;
+  /* Styles communs pour tous les boutons avec la classe "objects" */
+  color: #1d6154;
+  cursor: pointer;
 }
 
 .objects[data-filter="Tous"] {
-    /* Styles spécifiques pour le bouton avec l'attribut data-filter="Tous" */
-    width: 100px;
-    height: 37px;
+  /* Styles spécifiques pour le bouton avec l'attribut data-filter="Tous" */
+  width: 100px;
+  height: 37px;
 }
 
 .objects[data-filter="Tous"]:hover {
-	color: #FFF;
-	background-color: #1D6154;
+  color: #fff;
+  background-color: #1d6154;
 }
 
 .objects[data-filter="Objets"] {
-    /* Styles spécifiques pour le bouton avec l'attribut data-filter="Objets" */
-    width: 100px;
-    height: 37px;
+  /* Styles spécifiques pour le bouton avec l'attribut data-filter="Objets" */
+  width: 100px;
+  height: 37px;
 }
 
 .objects[data-filter="Objets"]:hover {
-	color: #FFF;
-	background-color: #1D6154;
+  color: #fff;
+  background-color: #1d6154;
 }
 
 .objects[data-filter="Appartements"] {
-    /* Styles spécifiques pour le bouton avec l'attribut data-filter="Appartements" */
-    width: 157px;
-    height: 37px;
+  /* Styles spécifiques pour le bouton avec l'attribut data-filter="Appartements" */
+  width: 157px;
+  height: 37px;
 }
 
 .objects[data-filter="Appartements"]:hover {
-	color: #FFF;
-	background-color: #1D6154;
+  color: #fff;
+  background-color: #1d6154;
 }
 
 .objects[data-filter="Hotels & restaurants"] {
-    /* Styles spécifiques pour le bouton avec l'attribut data-filter="Hotels & restaurants" */
-    width: 198px;
-    height: 37px;
+  /* Styles spécifiques pour le bouton avec l'attribut data-filter="Hotels & restaurants" */
+  width: 198px;
+  height: 37px;
 }
 
 .objects[data-filter="Hotels & restaurants"]:hover {
-	color: #FFF;
-	background-color: #1D6154;
+  color: #fff;
+  background-color: #1d6154;
 }
 
-
-
 button.tous {
-	width: 100px;
-	height: 37px;
+  width: 100px;
+  height: 37px;
 }
 
 button.objects {
-	width: 100px;
-	height: 37px;
+  width: 100px;
+  height: 37px;
 }
 
 button.apartements {
-	width: 157px;
-	height: 37px;
+  width: 157px;
+  height: 37px;
 }
 
 button.hotels-restaurants {
-	width: 198px;
-	height: 37px;
+  width: 198px;
+  height: 37px;
 }
-
 
 /* Styles pour la galerie d'images */
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
 .gallery figure {
-    width: calc(33.33% - 10px);
-    margin-right: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-    transition: width 0.3s, opacity 0.3s;
+  width: calc(33.33% - 10px);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: width 0.3s, opacity 0.3s;
 }
 
 .gallery figure img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Styles pour les filtres actifs et inactifs */
 figure.inactive {
-	display: none;
+  display: none;
 }
-
-
 
 #contact {
-	width: 50%;
-    margin: auto;
+  width: 50%;
+  margin: auto;
 }
 #contact > * {
-	text-align: center;
-
+  text-align: center;
 }
-#contact h2{
-	margin-bottom: 20px;
+#contact h2 {
+  margin-bottom: 20px;
 }
 #contact form {
-	text-align: left;
-	margin-top:30px;
-	display: flex;
-	flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 #contact input {
-	height: 50px;
-	font-size: 1.2em;
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 #contact label {
-	margin: 2em 0 1em 0;
+  margin: 2em 0 1em 0;
 }
 #contact textarea {
-	border: none;
-	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
-    top: 20px;
-    font-family: 'Syne';
-    font-weight: 700;
-    color: white;
-    background-color: #1D6154;
-    margin: 2em auto;
-    width: 237px;
-    text-align: center;
-    height: 36px;
-    border-radius: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+input[type="submit"] {
+  top: 20px;
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 237px;
+  text-align: center;
+  height: 36px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em;
+  display: flex;
+  justify-content: flex-end;
+  margin: 2em;
 }
 
 section#login-section {
-	width: 26%;
-    margin: auto;
+  width: 26%;
+  margin: auto;
 }
 
 h2.login-title {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 form#login-form {
-	text-align: left;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 label.email-label {
-	margin: 2em 0 1em 0;
+  margin: 2em 0 1em 0;
 }
 
 input#username {
-	height: 50px;
-    font-size: 1.2em;
-    border: none;
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 label.password-label {
-	margin: 2em 0 1em 0;
+  margin: 2em 0 1em 0;
 }
 
 input#password {
-	height: 50px;
-    font-size: 1.2em;
-    border: none;
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 button.button-connect {
-	height: 50px;
-    font-size: 1.2em;
-    border: none;
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-	flex-shrink: 0;
-	cursor: pointer;
-	font-family: 'Syne';
-    font-weight: 700;
-    color: white;
-    background-color: #1D6154;
-    margin: 2em auto;
-    width: 180px;
-    text-align: center;
-    border-radius: 60px;
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  flex-shrink: 0;
+  cursor: pointer;
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  width: 180px;
+  text-align: center;
+  border-radius: 60px;
 }
 
 .animationbtn {
-	animation: animationbtn 0.3s ease-in-out;
+  animation: animationbtn 0.3s ease-in-out;
+}
+
+@keyframes animationbtn {
+  0% {
+    background-color: #d65353;
+    transform: translateX(0);
   }
-  
-  @keyframes animationbtn {
-	0% {
-	  background-color: #d65353;
-	  transform: translateX(0);
-	}
-	20% {
-	  transform: translateX(-10px);
-	}
-	40% {
-	  transform: translateX(10px);
-	}
-	60% {
-	  transform: translateX(-10px);
-	}
-	80% {
-	  transform: translateX(10px);
-	}
-	100% {
-	  transform: translateX(0);
-	}
+  20% {
+    transform: translateX(-10px);
   }
-  
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
 p#message-error.error-message {
-	color: red;
-    margin-top: 10px;
+  color: red;
+  margin-top: 10px;
 }
 
 a.mdp-forget {
-	color: #3D3D3D;
-    font-family: Work Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-decoration-line: underline;
-    margin-top: 28px;
-	display: flex;
-	justify-content: center;
+  color: #3d3d3d;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
 }
-
-
-
-
 
 /* Style pour le modal */
 .modal-container {
-    position: fixed; /* Utilisez "fixed" pour un positionnement correct */
-    background: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -45%);
-    padding: 20px;
-    max-height: 80vh;
-    width: 632px;
-    overflow-y: auto; /* Ajoutez un défilement si nécessaire */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: fixed; /* Utilisez "fixed" pour un positionnement correct */
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  padding: 20px;
+  max-height: 80vh;
+  width: 632px;
+  overflow-y: auto; /* Ajoutez un défilement si nécessaire */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .modal {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .style-hr.trait {
-    width: 420px;
-    height: 1px;
-    position: fixed;
-    left: 105px;
-    top: 577px;
+  width: 420px;
+  height: 1px;
 }
 
 .invisible {
-    display: none;
+  display: none;
 }
-
 
 .fa-solid.fa-xmark {
-    position: fixed;
-    left: 630px;
-    top: 28px;
-    cursor: pointer;
+  position: fixed;
+  left: 630px;
+  top: 28px;
+  cursor: pointer;
 }
 
-
-
 .modal-photo {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 46px 35px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 46px 35px;
 }
 
 .modal-photo img {
-    width: 79px;
-    height: 105px;
-    cursor: pointer;
-    padding: 10px;
+  width: 79px;
+  height: 105px;
+  cursor: pointer;
 }
 
 .modal-title {
-    display: flex;
-    justify-content: center;
-    font-size: 26px;
-    padding-bottom: 35px;
-    font-weight: 400;
-    position: relative;
-    top: 37px;
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  padding-bottom: 35px;
+  font-weight: 400;
+  position: relative;
+  top: 37px;
 }
 
 i.fa-regular.fa-trash-can {
-    position: absolute;
-    background: black;
-    color: white;
-    cursor: pointer;
-    font-family: "FontAwesome";
-    font-size: 11px;
-    transform: translate(-8px, 8px);
-    top: 6px;
-    right: 5px;
-    z-index: 1;
+  position: absolute;
+  background: black;
+  color: white;
+  cursor: pointer;
+  font-family: "FontAwesome";
+  font-size: 11px;
+  top: 6px;
+  right: 5px;
+  z-index: 1;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalFirst-ajout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .btnajout {
-    font-family: 'Syne';
-    font-weight: 700;
-    color: white;
-    background-color: #1D6154;
-    margin: 2em auto;
-    text-align: center;
-    border-radius: 60px;
-    width: 237px;
-    height: 36px;
-    font-size: 14px;
-    cursor: pointer;
+  font-family: "Syne";
+  font-weight: 700;
+  color: white;
+  background-color: #1d6154;
+  margin: 2em auto;
+  text-align: center;
+  border-radius: 60px;
+  width: 237px;
+  height: 36px;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 #openModalIcon.far.fa-pen-to-square {
-    display: block;
-    position: relative;
-    left: 130px;
-    top: -22px;
-    cursor: pointer;
+  display: block;
+  position: relative;
+  left: 130px;
+  top: -22px;
+  cursor: pointer;
 }
 
 /*Icone fa-trash-can*/
 
 .modal-photo-item {
-    position: relative;
-    display: inline-block;
-    margin: 5px;
-  }
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
 
-  .edition-mode.hidden {
-    height: 59px;
+.edition-mode.hidden {
+  height: 59px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  gap: 10px;
+}
+
+/*modalAddPhoto*/
+
+#modalAddPhoto {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalAddPhotoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  height: 688px;
+  max-height: 96vh;
+  width: 630px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+a.arrow-left {
+    width: 21px;
+    height: 21px;
+    position: relative;
+    left: 34px;
+    top: -273px;
+    cursor: pointer;
+}
+.modalAddPhotoClose {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 560px;
+    top: -276px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.modalAddPhotoAjouterPhotoContainer {
+  width: 420px;
+  height: 169px;
+  border-radius: 3px;
+  background: #e8f1f6;
+  position: absolute;
+  top: 126px;
+}
+
+.iconeimageContainer {
+    width: 600px;
+    transform: translate(110px, 10px);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000;
-    color: #FFF;
-    cursor: pointer;
-    gap: 10px;
-  }
+}
 
+/*#imageContainer {
+  left: 228px;
+  display: flex;
+  width: 182px;
+  height: 152px;
+}*/
 
-  /*modalAddPhoto*/
+#fileInput {
+  width: 173px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0;
+}
 
+.custom-file-upload {
+  width: 173px;
+  height: 36px;
+  border-radius: 50px;
+  background: #cbd6dc;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center !important;
+  font-weight: bold;
+  justify-content: center;
+  color: #306685;
+  font-family: Work Sans;
+  z-index: 2;
+  position: absolute;
+  top: 84px;
+  left: 70px;
+}
 
-  #modalAddPhoto {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    }
-
-  .modalAddPhotoContainer {
-    position: absolute;
-    background: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -45%);
-    height: 688px;
-    max-height: 90vh;
-    width: 630px;
-    overflow-y: auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .arrow-left {
-        width: 21px;
-        height: 21px;
-        position: fixed;
-        left: 30px;
-        top: 26px;
-        cursor: pointer;
-    }
-
-    .modalAddPhotoClose {
-        position: fixed;
-        width: 24px;
-        height: 24px;
-        left: 580px;
-        top: 26px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .modalAddPhotoAjouterPhotoContainer {
-        width: 420px;
-        height: 169px;
-        border-radius: 3px;
-        background: #E8F1F6;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        top: 77px;
-        left: 105px;
-    }
-
-    #imageContainer {
-        left: 228px;
-    display: flex;
-    width: 182px;
+#imageContainer img {
+    width: 150px;
     height: 152px;
-    position: fixed;
-    }
+    position: relative;
+    left: 122px;
+}
 
-    #fileInput {
-        width: 173px;
-        height: 36px;
-        position: absolute;
-        top: 82px;
-        left: -43px;
-        cursor: pointer;
-        z-index: 1;
-        opacity: 0;
-    }
+.ajout_photo {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    text-align: center;
+    font-family: Work Sans;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 150px;
+    height: 30px;
+}
 
-    .custom-file-upload {
-        width: 173px;
-        height: 36px;
-        border-radius: 50px;
-        background: #CBD6DC;
-        position: fixed;
-        top: 202px;
-        left: 235px;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center !important;
-        font-weight: bold;
-        justify-content: center;
-        color: #306685;
-        font-family: Work Sans;
-        z-index: 2;
-    }
+.modalAddPhotoAjouterPhoto {
+  width: 76px;
+  height: 76px;
+  color: #b9c5cc;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 13px;
+  left: 55px;
+  cursor: pointer;
+}
 
-    #imageContainer img {
-        width: 150px;
-        height: 152px;
-        position: absolute;
-        left: 15px;
-    }
+input#ajout.title {
+  position: relative;
+  top: -6px;
+  left: 34px;
+  display: none;
+}
 
-    .ajout_photo {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        top: 42px;
-        color: #000;
-        text-align: center;
-        font-family: Work Sans;
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
+label.file-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #306685;
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
 
-    .modalAddPhotoAjouterPhoto {
-        width: 76px;
-        height: 76px;
-        color: #b9c5cc;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        top: 13px;
-        left: 55px;
-        cursor: pointer;
-    }
+p.ajout {
+  color: #444;
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  top: 63px;
+}
 
-    input#ajout.title {
-        position: relative;
-        top: -6px;
-        left: 34px;
-        display: none;
-    }
+.custom-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 341px;
+}
 
-    label.file-label {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        left: 260px;
-        top: 260px;
-        color: #306685;
-        text-align: center;
-        font-family: Work Sans;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        cursor: pointer;
-    }
+.categorie {
+    position: relative;
+    top: 30px;
+}
 
-    p.ajout {
-        color: #444;
-        text-align: center;
-        font-family: Work Sans;
-        font-size: 10px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        position: relative;
-        top: 134px;
-        left: -27px;
-    }
+h5 {
+  color: #3d3d3d;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+}
 
-    .custom-form {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        top: 391px;
-        left: -1px;
-        flex-direction: column;
-        align-items: center;
-    }
+h6 {
+  color: #3d3d3d;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+}
 
-    h4 {
-        position: fixed;
-        top: 260px;
-        left: 263px;
-    }
+input#Titre-photo[type="text"].input-titre-photo {
+  width: 420px;
+  height: 51px;
+  background: #fff;
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+}
 
-    h5 {
-        color: #3D3D3D;
-        font-family: Work Sans;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        display: flex;
-        position: relative;
-        top: -30px;
-    }
+select#categorie-photo.select-categorie {
+  width: 420px;
+  height: 51px;
+  background: #fff;
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
+  cursor: pointer;
+}
 
-    h6 {
-        color: #3D3D3D;
-        font-family: Work Sans;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        display: flex;
-        position: relative;
-    }
+button.AddPhoto {
+  width: 237px;
+  height: 36px;
+  border-radius: 60px;
+  background: #a7a7a7;
+  display: block;
+  cursor: pointer;
+  z-index: 2;
+  overflow-y: auto;
+  position: relative;
+  top: 295px;
+  left: -202px;
+}
 
-    input#Titre-photo[type="text"].input-titre-photo {
-        width: 420px;
-        height: 51px;
-        background: #FFF;
-        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
-        position: relative;
-        top: -22px;
-    }
+#uploaded-image {
+  display: block;
+  visibility: visible;
+  border: 1px solid #000;
+}
 
-    select#categorie-photo.select-categorie {
-        width: 420px;
-        height: 51px;
-        background: #FFF;
-        box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
-        position: relative;
-        top: 10px;
-        cursor: pointer;
-    }
-
-    button.AddPhoto {
-        width: 237px;
-        height: 36px;
-        border-radius: 60px;
-        background: #A7A7A7;
-        display: block;
-        position: absolute;
-        left: 418px;
-        top: 620px;
-        cursor: pointer;
-        z-index: 2;
-        overflow-y: auto;
-    }
-
-    #uploaded-image {
-        display: block;
-        visibility: visible;
-        border: 1px solid #000;
-    }
-
-    .styled-hr {
-        width: 420px;
-        height: 1px;
-        color: #B3B3B3;
-        position: absolute;
-        top: 580px;
-        left: 337px;
-    }
-
-  
-  
-  
+.styled-hr {
+  width: 420px;
+  height: 1px;
+  color: #b3b3b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 246px;
+  left: 85px;
+}

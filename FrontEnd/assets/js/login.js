@@ -6,11 +6,6 @@ window.onload = function() {
         console.log("Début de l'écouteur de clic");
         e.preventDefault();
         console.log('click');
-
-        localStorage.setItem('isLoggedIn', 'true');
-        window.location.href = './index.html';
-
-
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -36,10 +31,9 @@ window.onload = function() {
                 }
             })
             .then(result => {
-
+                localStorage.setItem('isLoggedIn', 'true');
                 localStorage.setItem('token', result.token);
                 window.location.href = "./index.html";
-                console.log(result)
             })
         .catch(error => console.log('error', error));
 
