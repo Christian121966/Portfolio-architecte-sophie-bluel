@@ -982,3 +982,43 @@ button.AddPhoto {
   top: 246px;
   left: 85px;
 }
+
+.fa-regular.fa-trash-can.custom-trash-icon {
+  position: absolute;
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-family: "FontAwesome";
+    font-size: 11px;
+    top: 255px;
+    right: 450px;
+    z-index: 1;
+    width: 17px;
+    height: 17px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+svg.iconeTelechargee {
+    position: absolute;
+    background: black;
+    color: white;
+    cursor: pointer;
+    font-family: "FontAwesome";
+    font-size: 11px;
+    top: 6px;
+    right: -116px;
+    z-index: 1;
+    width: 17px;
+    height: 17px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

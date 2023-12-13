@@ -239,8 +239,34 @@ modal.className = "modal invisible";
 
 //Affichage de l'image téléchargée.
 
-const fileInput = document.getElementById("fileInput");
+/*const fileInput = document.getElementById("fileInput");
 const imageContainer = document.getElementById("imageContainer");
+
+fileInput.addEventListener("change", function (event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  const customFileUpload = document.querySelector(".custom-file-upload");
+  customFileUpload.style.opacity = "0";
+
+
+  reader.onload = function (e) {
+    const imageUrl = e.target.result;
+    const imageElement = document.createElement("img");
+    imageElement.src = imageUrl;
+    imageContainer.innerHTML = "";
+    imageContainer.appendChild(imageElement);
+  };
+
+  reader.readAsDataURL(file);
+});*/
+
+
+//Transfert de l'image téléchargée vers modal-photo
+
+//const fileInput = document.getElementById("fileInput");
+//const imageContainer = document.getElementById("imageContainer");
+
+let selectedImage = null;
 
 fileInput.addEventListener("change", function (event) {
   const file = event.target.files[0];
@@ -252,12 +278,67 @@ fileInput.addEventListener("change", function (event) {
     const imageUrl = e.target.result;
     const imageElement = document.createElement("img");
     imageElement.src = imageUrl;
-    imageContainer.innerHTML = "";
-    imageContainer.appendChild(imageElement);
+
+    const modalPhotoItem = document.createElement("div");
+    modalPhotoItem.className = "modal-photo-item";
+    const svg = document.createElement("svg");
+    svg.setAttribute("class", "iconeTelechargee");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "100");
+    svg.setAttribute("height", "100");
+    svg.setAttribute("viewBox", "0 0 50 50");
+    svg.style.fill = "#FFFFFF";
+
+    const path = document.createElement("path");
+    path.setAttribute("d", "M 21 0 C 19.355469 0 ..."); // Ajoutez le chemin complet ici
+
+    svg.appendChild(path);
+    
+    
+
+    modalPhotoItem.appendChild(svg);
+    modalPhotoItem.appendChild(imageElement);
+    imageContainer.appendChild(modalPhotoItem);
+
+    //Stockage de l'image téléchargée dans le stockage local
+    localStorage.setItem('uploadedImage', imageUrl);
+    
   };
 
   reader.readAsDataURL(file);
 });
+
+const validerButton = document.querySelector(".AddPhoto");
+validerButton.addEventListener("click", function () {
+  if (selectedImage) {
+    const clonedImageModal = selectedImage.cloneNode(true);
+    const modalPhotoContainer = document.querySelector(".modal-photo");
+    modalPhotoContainer.appendChild(clonedImageModal);
+
+    const clonedImageGallery = selectedImage.cloneNode(true);
+    const galleryContainer = document.getElementById("gallery");
+    galleryContainer.appendChild(clonedImageGallery);
+
+    imageContainer.innerHTML = "";
+    selectedImage = null;
+  }
+
+
+  // Mettre à jour le nombre de photos récupérées
+  fetch("http://localhost:5678/api/works")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log("Nombre de photos récupérées :", data.length + 1);
+      // Mettre à jour l'affichage du nombre de photos récupérées
+      //const numberOfPhotos = data.length + 1;
+      //const numberOfPhotosDisplay = document.getElementById("numberOfPhotosDisplay");
+      //numberOfPhotosDisplay.textContent = `Nombre de photos récupérées : ${numberOfPhotos}`;
+    });
+});
+
+
 
 //Fermeture de modalAddPhoto
 function fermerModal() {
@@ -273,64 +354,5 @@ window.addEventListener("click", function (event) {
   }
 });
 
-function transfertImageToModal() {
-  const imageElement = document.querySelector("#imageContainer img");
-  const modalPhotoContainer = document.querySelector(".modal-photo");
-
-  if (imageElement && modalPhotoContainer) {
-    const clonedImage = imageElement.cloneNode(true);
-    clonedImage.style.width = "79px";
-    clonedImage.style.height = "105px";
-    clonedImage.style.position = "reltive";
-    clonedImage.style.display = "inline-block";
-    clonedImage.style.margin = "5px";
-
-    const trashIcon = document.createElement("i");
-    trashIcon.className = "fa-regular fa-trash-can";
-    trashIcon.style.position = "absolute";
-    trashIcon.style.background = "black";
-    trashIcon.style.color = "white";
-    trashIcon.style.cursor = "pointer";
-    trashIcon.style.fontFamily = "FontAwesome";
-    trashIcon.style.fontSize = "11px";
-    trashIcon.style.top = "6px";
-    trashIcon.style.right = "5px";
-    trashIcon.style.zIndex = "1";
-    trashIcon.style.width = "17px";
-    trashIcon.style.height = "17px";
-    //trashIcon.style.flexShrink = "0";
-    trashIcon.style.borderRadius = "1px";
-    trashIcon.style.display = "flex";
-    trashIcon.style.flexDirection = "column";
-    trashIcon.style.justifyContent = "center";
-    trashIcon.style.alignItems = "center";
-
-    clonedImage.appendChild(trashIcon);
-    modalPhotoContainer.appendChild(clonedImage);
-  console.log("image bien tranférée.");
-
-   document.querySelector("#imageContainer").innerHTML = "";
-
-   const customFileUpload = document.querySelector(".custom-file-upload");
-  customFileUpload.style.opacity = "1";
-  }
-}
 
 
-fileInput.addEventListener("change", function (event) {
-  const file = event.target.files[0];
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    const imageUrl = e.target.result;
-    const imageElement = document.createElement("img");
-    imageElement.src = imageUrl;
-    imageContainer.innerHTML = "";
-    imageContainer.appendChild(imageElement);
-  };
-  reader.readAsDataURL(file);
-});
-
-// Ajout de la fonction pour le clic sur le bouton "Valider"
-document.querySelector(".AddPhoto").addEventListener("click", function() {
-  transfertImageToModal();
-});
