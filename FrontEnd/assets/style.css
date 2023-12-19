@@ -726,6 +726,14 @@ i.fa-regular.fa-trash-can {
   margin: 5px;
 }
 
+.modal-photo-item-new {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  left: 120px;
+  top: -10px;
+}
+
 .edition-mode.hidden {
   height: 59px;
   display: flex;
@@ -836,7 +844,7 @@ a.arrow-left {
     width: 150px;
     height: 152px;
     position: relative;
-    left: 122px;
+    /*left: 122px;*/
 }
 
 .ajout_photo {
@@ -983,42 +991,8 @@ button.AddPhoto {
   left: 85px;
 }
 
-.fa-regular.fa-trash-can.custom-trash-icon {
-  position: absolute;
-    background: black;
-    color: white;
-    cursor: pointer;
-    font-family: "FontAwesome";
-    font-size: 11px;
-    top: 255px;
-    right: 450px;
-    z-index: 1;
-    width: 17px;
-    height: 17px;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 
-svg.iconeTelechargee {
-    position: absolute;
-    background: black;
-    color: white;
-    cursor: pointer;
-    font-family: "FontAwesome";
-    font-size: 11px;
-    top: 6px;
-    right: -116px;
-    z-index: 1;
-    width: 17px;
-    height: 17px;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
+
 

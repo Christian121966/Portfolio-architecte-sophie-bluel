@@ -237,50 +237,34 @@ const modal = document.createElement("div");
 modal.id = "modal-gallery";
 modal.className = "modal invisible";
 
-//Affichage de l'image téléchargée.
-
-/*const fileInput = document.getElementById("fileInput");
-const imageContainer = document.getElementById("imageContainer");
-
-fileInput.addEventListener("change", function (event) {
-  const file = event.target.files[0];
-  const reader = new FileReader();
-  const customFileUpload = document.querySelector(".custom-file-upload");
-  customFileUpload.style.opacity = "0";
-
-
-  reader.onload = function (e) {
-    const imageUrl = e.target.result;
-    const imageElement = document.createElement("img");
-    imageElement.src = imageUrl;
-    imageContainer.innerHTML = "";
-    imageContainer.appendChild(imageElement);
-  };
-
-  reader.readAsDataURL(file);
-});*/
 
 
 //Transfert de l'image téléchargée vers modal-photo
 
-//const fileInput = document.getElementById("fileInput");
-//const imageContainer = document.getElementById("imageContainer");
+const fileInput = document.getElementById("fileInput");
+const imageContainer = document.getElementById("imageContainer");
 
 let selectedImage = null;
 
 fileInput.addEventListener("change", function (event) {
   const file = event.target.files[0];
   const reader = new FileReader();
-  const customFileUpload = document.querySelector(".custom-file-upload");
-  customFileUpload.style.opacity = "0";
+  //const customFileUpload = document.querySelector(".custom-file-upload");
+  //customFileUpload.style.opacity = "0";
 
   reader.onload = function (e) {
     const imageUrl = e.target.result;
     const imageElement = document.createElement("img");
     imageElement.src = imageUrl;
 
-    const modalPhotoItem = document.createElement("div");
-    modalPhotoItem.className = "modal-photo-item";
+    /*Définir l'image sélectionnée.*/
+    selectedImage = imageElement;
+
+    // Ajouter l'image à un conteneur dans votre application
+    imageContainer.appendChild(imageElement);
+
+    const modalPhotoItemNew = document.createElement("div");
+    modalPhotoItemNew.className = "modal-photo-item-new";
     const svg = document.createElement("svg");
     svg.setAttribute("class", "iconeTelechargee");
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
@@ -293,12 +277,10 @@ fileInput.addEventListener("change", function (event) {
     path.setAttribute("d", "M 21 0 C 19.355469 0 ..."); // Ajoutez le chemin complet ici
 
     svg.appendChild(path);
-    
-    
 
-    modalPhotoItem.appendChild(svg);
-    modalPhotoItem.appendChild(imageElement);
-    imageContainer.appendChild(modalPhotoItem);
+    modalPhotoItemNew.appendChild(svg);
+    modalPhotoItemNew.appendChild(imageElement);
+    imageContainer.appendChild(modalPhotoItemNew);
 
     //Stockage de l'image téléchargée dans le stockage local
     localStorage.setItem('uploadedImage', imageUrl);
@@ -307,6 +289,9 @@ fileInput.addEventListener("change", function (event) {
 
   reader.readAsDataURL(file);
 });
+
+
+  
 
 const validerButton = document.querySelector(".AddPhoto");
 validerButton.addEventListener("click", function () {
@@ -339,6 +324,24 @@ validerButton.addEventListener("click", function () {
 });
 
 
+//Création de la même structure <div> pour l'image téléchargée.
+function moveImageToModalPhoto() {
+  const modalPhotoItemNew = document.querySelector(".modal-photo-item-new");
+  const modalPhotoContainer = document.querySelector(".modal-photo");
+  
+  if (modalPhotoItemNew && modalPhotoContainer) {
+    const clonedModalPhotoItem = modalPhotoItemNew.cloneNode(true);
+    modalPhotoContainer.appendChild(clonedModalPhotoItem);
+    modalPhotoItemNew.remove();
+  }
+}
+
+// Appel de la fonction pour déplacer l'image vers "modal-photo"
+moveImageToModalPhoto();
+
+
+
+
 
 //Fermeture de modalAddPhoto
 function fermerModal() {
@@ -353,6 +356,4 @@ window.addEventListener("click", function (event) {
     fermerModal();
   }
 });
-
-
 
